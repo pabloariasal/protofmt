@@ -36,18 +36,18 @@ message SearchResponse
 
 {
 
-  message Result
-  {
-    string url = 1;
-    repeated google.protobuf.Any details = 2;
-       /* wrong indentation */ reserved "FOO",   'BAR'; // reserve some fields by name
-  }
+    message Result
+    {
+      string url = 1;
+      repeated google.protobuf.Any details = 2;
+         /* wrong indentation */ reserved "FOO",   'BAR'; // reserve some fields by name
+    }
           repeated Result results = 1;   
 
   enum Corpus
   {
       universal =    00;
-      web = 1;
+          web = 1;
       images = 2[opt1='my_string',  opt2 = +1.e-4 ];
       local=3;
       option allow_alias = true;
@@ -58,4 +58,9 @@ message SearchResponse
 Corpus corpus = 2;;; /* here we have multiple semicolons */
        foo.bar.Open open = 3;
 };; // semicolons disappear
+           enum EnumAllowingAlias {
+              unknown =      0;
+              STARTED = 1;
+              running = 2;
+            };
 /* This is the end of my protocol buffer file */

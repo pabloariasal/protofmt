@@ -30,6 +30,7 @@ message Person {
     SubMessage sub_message = 9 [a = -3.42];
   }
 } // semicolons at the end should be removed
+
 message SearchResponse {
   // extra white space
   message Result {
@@ -51,4 +52,11 @@ message SearchResponse {
   Corpus corpus = 2; /* here we have multiple semicolons */
   foo.bar.Open open = 3;
 } // semicolons disappear
+
+enum EnumAllowingAlias {
+  UNKNOWN = 0;
+  STARTED = 1;
+  RUNNING = 2;
+}
+
 /* This is the end of my protocol buffer file */

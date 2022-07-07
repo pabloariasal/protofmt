@@ -259,7 +259,7 @@ formatTopLevelElements es = mapAndConcatVertically f es
     f (A.TLEPackage e) = formatPackage e
     f (A.TLEImports es) = formatImportGroup es
     f (A.TLEOptions es) = formatOptionGroup es
-    f (A.TLEMessage e) = formatMessage e
+    f (A.TLEMessage e) = formatTopLevelMessage e
     f (A.TLEEnum e) = formatTopLevelEnum e
     f (A.TLEService e) = formatService e
 
