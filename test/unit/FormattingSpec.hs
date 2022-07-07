@@ -373,7 +373,7 @@ messageFormatting = do
                 A.Comment "// comment 4" (A.Loc 5 39)
               ]
           )
-        `shouldBe` syn "message MyMsg {\n  // comment 1\n  reserved 2, \"foo\", 9 to \"max\"; /* comment 2 */\n  reserved 8 to 10; /* comment 3 */ // comment 4\n}"
+        `shouldBe` syn "message MyMsg {\n  // comment 1\n  reserved 2, \"foo\", 9 to max; /* comment 2 */\n  reserved 8 to 10; /* comment 3 */ // comment 4\n}"
     it "message with comments" $
       do
         formatProto

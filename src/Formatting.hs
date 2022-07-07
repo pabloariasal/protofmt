@@ -177,7 +177,7 @@ formatMessage m@A.Message {..} = formatCompoundElement "message" name formatMess
         reservedElementToDoc e = case e of
           A.RFFieldName e -> dquotes . pretty $ e
           A.RFNumberSingle e -> pretty e
-          A.RFNumberRange from to -> pretty from <+> pretty ("to" :: Text) <+> (\case A.RFNRESingle n -> pretty n; A.RFNREMax -> pretty ("\"max\"" :: Text)) to
+          A.RFNumberRange from to -> pretty from <+> pretty ("to" :: Text) <+> (\case A.RFNRESingle n -> pretty n; A.RFNREMax -> pretty ("max" :: Text)) to
 
 formatTopLevelMessage :: A.Message -> StateDoc
 formatTopLevelMessage m = formatMessage m >>= blankLine

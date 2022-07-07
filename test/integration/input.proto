@@ -1,0 +1,61 @@
+/* This is my protocol buffer file */
+// define the syntax
+
+syntax   = "proto3";;;;
+// import groups are sorted alphabetically
+import   public /* comment are moved to the back */ "c.proto";
+import "b.proto";
+
+import weak 'a.proto'; // this does not belong to the group above
+package foo.bar; // my package
+/* this comment stays here */ option java_package = "com.example.foo";
+option a3 = 'com.example.foo';
+
+option o2 = options.can.be.idents;
+option o4 = false;
+
+/* This message defines a...
+person */
+message Person {
+
+  // normal field
+  string name = 1; map<string, Project> projects = 2;
+
+  int32 old_field  = 6  [    deprecated = true];
+
+  reserved /* inline comment */ 3,    15, 9 to 11, 40 to max; // reserve
+// wrong indentation
+oneof test_oneof
+{
+    string name = 4;
+    SubMessage sub_message = 9[a  =  -3.42 ];
+  };
+}; // semicolons at the end should be removed
+message SearchResponse
+// extra white space
+
+{
+
+  message Result
+  {
+    string url = 1;
+    repeated google.protobuf.Any details = 2;
+       /* wrong indentation */ reserved "FOO",   'BAR'; // reserve some fields by name
+  }
+          repeated Result results = 1;   
+
+  enum Corpus
+  {
+      universal =    00;
+      web = 1;
+      images = 2[opt1='my_string',  opt2 = +1.e-4 ];
+      local=3;
+      option allow_alias = true;
+      NEWS = 4;
+      PRODUCTS = 5;
+      VIDEO = 6;
+   }
+Corpus corpus = 2;;; /* here we have multiple semicolons */
+       foo.bar.Open open = 3;
+};; // semicolons disappear
+/* This is the end of my protocol buffer file */

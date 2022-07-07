@@ -8,6 +8,6 @@ type Error = String
 type Result = String
 
 runFormatting :: String -> String -> Either Error Result
-runFormatting file s = case parseProto file s of
+runFormatting file input = case parseProto file input of
   Left error -> Left error
   Right result -> Right $ formatProto result

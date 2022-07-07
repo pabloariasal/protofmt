@@ -87,14 +87,9 @@ test-suite integration
     default-language: Haskell2010
     type:             exitcode-stdio-1.0
     hs-source-dirs:
-        test/unit
-    other-modules:
-        ParsingSpec
-        FormattingSpec
+        test/integration
     main-is:
         Spec.hs
-    default-extensions:
-        OverloadedStrings
     build-depends:
         base ^>=4.14.3.0,
         protofmt,
