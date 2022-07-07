@@ -9,7 +9,6 @@ main = getArgs >>= parseArgs
 
 parseArgs :: [String] -> IO ()
 parseArgs ["--help"] = printUsage
-parseArgs [] = format "" getContents
 parseArgs [f] = format f (readFile f)
 parseArgs _ = printUsage
 
