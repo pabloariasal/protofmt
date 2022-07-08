@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+// imports should be sorted
+import 'b.proto';
+import "a.proto";
+
+/*
+Defines a (very unformatted) person message. 
+*/
+message Person
+{
+	string name = 1;
+               int32 id = 2;
+enum EmailType
+{
+		private = 1; // enum values should be uppercase silly
+		work = 2;
+}
+	map<EmailType,  string> emails = 3;
+}; // semicolon and trailing whitespace...
+
+
