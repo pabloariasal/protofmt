@@ -1,22 +1,21 @@
-syntax = "proto3";
+syntax = 'proto3'; // use double-quotes
 
 // imports should be sorted
 import 'b.proto';
-import "a.proto";
+	import "a.proto";
 
 /*
 Defines a (very unformatted) person message. 
 */
-message Person
+message
+Person
 {
-	string name = 1;
-               int32 id = 2;
-enum EmailType
-{
-		private = 1; // enum values should be uppercase silly
-		work = 2;
-}
-	map<EmailType,  string> emails = 3;
-}; // semicolon and trailing whitespace...
+	             string name = 1;
+                 int32 id = 2;
 
+// use uppercase for enum fields silly
+enum  EmailType {private = 1; work = 2; alt = 3;}
+  
+             map<EmailType,   string> emails = 3;
+}; // semicolon and trailing whitespace :(
 
