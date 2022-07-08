@@ -23,7 +23,6 @@ indentation = 2
 formatComments :: [A.Comment] -> [Doc ()]
 formatComments = map (pretty . A.contents)
 
--- TODO make these functions generic
 insertCommentsAbove :: [A.Comment] -> Doc () -> StateDoc
 insertCommentsAbove [] doc = return doc
 insertCommentsAbove comments doc
@@ -273,6 +272,7 @@ formatFile (A.ProtoFile s tle) = concatenateVertically [formatSyntax s, (formatT
     concatenateVertically :: [StateDoc] -> StateDoc
     concatenateVertically docs = vsep . filter (not . isEmpty) <$> sequence docs
 
+-- default is line lenght of 80 characters
 render :: Doc () -> Text
 render = renderStrict . layoutSmart defaultLayoutOptions
 
