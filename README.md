@@ -69,5 +69,5 @@ message M {
 * Only one file can be processed at once
 * No `--in-place` flag supported
 * No `--recursive` flag supported
-
+* No `--diff` flag to display a diff between formatted and unformatted file (status code 0 if no diff)
 # Contributing
