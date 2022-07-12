@@ -11,7 +11,7 @@
 * Makes all string literals double quoted: `option opt = 'foo';` => `option opt = "foo";`
 * Makes all enum fields uppercase: `enum E { field = 1 }` => `enum E { FIELD = 1 }`
 * Makes opening braces on the declaration line: `message M {`
-* Strips redundant semicolons: `enum E {};` => `enum E {}`
+* Strips redundant semicolons: `enum E { A = 0;;;; };;;;` => `enum E {A = 0;}`
 * Full comment support
 
 # Installation
